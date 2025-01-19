@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "My Mini Hero",
+  "version": "1.0",
+  "description": "My Mini Hero Chrome extension",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/myminihero_logo.png",
+      "48": "icons/myminihero_logo.png",
+      "128": "icons/myminihero_logo.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles/content.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/explosion_effects.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

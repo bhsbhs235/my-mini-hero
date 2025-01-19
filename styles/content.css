@@ -1,0 +1,27 @@
+.myminihero_div {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.content_img {
+    position: absolute;
+    width: 900px; /* 전체 이미지의 너비 */
+    height: 100px; /* 셀 높이 */
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: spriteAnimation 3s steps(9) infinite; /* 9 프레임, 0.9초, 반복 */
+}
+
+@keyframes spriteAnimation {
+    from {
+        background-position: 0 0; /* 첫 번째 프레임 */
+    }
+    to {
+        background-position: -900px 0; /* 마지막 프레임 위치 */
+    }
+}
