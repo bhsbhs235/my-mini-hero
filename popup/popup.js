@@ -1,3 +1,11 @@
-document.getElementById('click-me').addEventListener('click', () => {
-    alert('Button clicked!');
+document.getElementById("onButton").addEventListener("click", () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.sendMessage(tabs[0].id, { action: "on" });
+    });
+});
+
+document.getElementById("offButton").addEventListener("click", () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.sendMessage(tabs[0].id, { action: "off" });
+    });
 });

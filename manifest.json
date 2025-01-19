@@ -3,7 +3,7 @@
   "name": "My Mini Hero",
   "version": "1.0",
   "description": "My Mini Hero Chrome extension",
-  "permissions": ["storage", "activeTab"],
+  "permissions": ["scripting", "storage", "activeTab"],
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup/popup.html",
@@ -12,6 +12,11 @@
       "48": "icons/myminihero_logo.png",
       "128": "icons/myminihero_logo.png"
     }
+  },
+  "icons": {
+    "16": "icons/myminihero_logo.png",
+    "48": "icons/myminihero_logo.png",
+    "128": "icons/myminihero_logo.png"
   },
   "background": {
     "service_worker": "background.js"
